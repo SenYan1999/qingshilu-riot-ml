@@ -1,0 +1,11 @@
+./data/stata/China_pre_post.dta
+./data/stata/Rice_2nd_mid_stata_validation_weather_grain_month.dta
+./data/triple_infer_entries.json
+./data/triple_infer_entries.json.bak
+./data/binary_infer_entries.json
+./data/data.pkl
+./data/web/filter_binary_infer_entries.json
+./data/validation/month_3topics_10_18.dta
+./data/validation/guwen_bert_month_3topics.dta
+./logs/guwen-bert.pt
+./logs/triple-guwen-bert.pt
