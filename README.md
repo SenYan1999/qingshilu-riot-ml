@@ -109,7 +109,7 @@ python main.py --export_data_stata
 python main.py --benchmark
 ```
 
-## Run Demo Website
+## [EMOjI] Run Demo Website
 
 ```bash
 python main.py --export_data_demo_website
