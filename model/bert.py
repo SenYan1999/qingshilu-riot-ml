@@ -1,14 +1,16 @@
+import torch
 import torch.nn as nn
 from transformers import AutoModel, AutoTokenizer, AutoConfig
 
 
 class BertClassifier(nn.Module):
-    def __init__(self, num_classes, transformer_name, device='cuda:0'):
+    def __init__(self, num_classes, transformer_name):
         super(BertClassifier, self).__init__()
         self.bert = AutoModel.from_pretrained(transformer_name)
         self.hidden_dim = AutoConfig.from_pretrained(transformer_name).hidden_size
         self.tokenizer = AutoTokenizer.from_pretrained(transformer_name)
         self.classifier = nn.Linear(self.hidden_dim, num_classes)
+        device = 'cuda' if torch.cuda.is_available() else 'cpu'
         self.device = device
 
     def forward(self, sent):

@@ -12,23 +12,6 @@ from sklearn.metrics import accuracy_score, classification_report
 from sklearn.pipeline import make_pipeline
 
 
-def naive_bayes_bi():
-    # two class
-    train_dataset, test_dataset = torch.load(args.train_dataset), torch.load(args.test_dataset)
-    x_train, y_train = [d[0] for d in train_dataset], [d[1] for d in train_dataset]
-    x_test, y_test = [d[0] for d in test_dataset], [d[1] for d in test_dataset]
-    model = make_pipeline(TfidfVectorizer(tokenizer=jieba.lcut), MultinomialNB())
-
-    # Training the model
-    model.fit(x_train, y_train)
-
-    # Predicting the labels for the test set
-    predicted_labels = model.predict(x_test)
-
-    # Evaluating the model
-    print("Accuracy:", accuracy_score(y_test, predicted_labels))
-    print("Classification Report:", classification_report(y_test, predicted_labels))
-
 def perceptron_bi():
     # two class
     import numpy as np
@@ -44,8 +27,7 @@ def perceptron_bi():
     predicted_labels = model.predict(x_test)
 
     # Evaluating the model
-    print("Accuracy:", accuracy_score(y_test, predicted_labels))
-    print("Classification Report:", classification_report(y_test, predicted_labels, digits=4))
+    print("Classification Report:\n", classification_report(y_test, predicted_labels, digits=4))
 
 def xgboost_bi():
     # two class
@@ -61,27 +43,7 @@ def xgboost_bi():
     predicted_labels = model.predict(x_test)
 
     # Evaluating the model
-    print("Accuracy:", accuracy_score(y_test, predicted_labels))
-    print("Classification Report:", classification_report(y_test, predicted_labels))
-
-def perceptron_onehot_bi():
-    # two class
-    train_dataset, test_dataset = torch.load(args.train_dataset), torch.load(args.test_dataset)
-    x_train, y_train = [d[0] for d in train_dataset], [d[1] for d in train_dataset]
-    x_test, y_test = [d[0] for d in test_dataset], [d[1] for d in test_dataset]
-    encoder = CountVectorizer(binary=True, tokenizer=jieba.lcut)  # Set binary=True for one-hot encoding
-    X = encoder.fit_transform(x_train).toarray()
-
-    model = Perceptron()
-
-    # Training the model
-    model.fit(encoder.transform(x_train), y_train)
-
-    # Predicting the labels for the test set
-    predicted_labels = model.predict(encoder.transform(x_test))
-
-    # Evaluating the model
-    print("Accuracy:", accuracy_score(y_test, predicted_labels))
+    print("Binary Perceptron Classification Report:\n", classification_report(y_test, predicted_labels))
 
 def mnb_bi():
     import numpy as np
@@ -137,65 +99,8 @@ def mnb_bi():
 
     # Calculate accuracy
     accuracy = sum(pred == actual for pred, actual in zip(predictions, y_test)) / len(y_test)
-    print(classification_report(y_test, predictions, digits=4))
-
-def naive_bayes_ling():
-    import os
-    import math
-
-    def filetowordlist(dataset):
-        """Read a riot training file and returns all characters and punctuations as a list."""
-        poswords, negwords = [], []
-        for line in dataset:
-            if line[1] == 0:
-                for c in line[0].strip():
-                    negwords.append(c)
-            elif line[1] == 1:
-                for c in line[0].strip():
-                    poswords.append(c)
-            else:
-                raise Exception('Error label in dataset')
-        return poswords, negwords
-
-    def classifyfiles(dataset):
-        """Classify several test files, keeping track of #correct."""
-        guesses = correct = 0
-        for line in dataset:
-            pp = pn = 0
-            line, label = line[0], line[1]
-            if line != '\n':
-                item = line.strip()
-                for character in item:
-                    if character in vocabulary:
-                        pp += math.log(poscounts[character]/postotal)
-                        pn += math.log(negcounts[character]/negtotal)
-                if (pp > pn and label == 1) or (pn >= pp and label == 0):
-                    correct += 1
-                guesses += 1
-            #print correct, guesses
-        return correct, guesses
-                        
-    train_dataset, test_dataset = torch.load(args.train_dataset), torch.load(args.test_dataset)
-    poswords, negwords = filetowordlist(train_dataset)
-
-    vocabulary = set(poswords + negwords)
-
-    PRIOR = 1.0 
-
-    poscounts = {w: PRIOR for w in vocabulary} # Initialize counts with prior (0.5)
-    negcounts = {w: PRIOR for w in vocabulary}
-
-    for w in poswords:
-        poscounts[w] = poscounts[w] + 1
-    for w in negwords:
-        negcounts[w] = negcounts[w] + 1
-
-    postotal = sum(poscounts.values()) # Calculate normalization
-    negtotal = sum(negcounts.values())
-
-    numcorrectpos, numattemptspos = classifyfiles(test_dataset)
-
-    print("ACCURACY: %f" % (numcorrectpos/float(numattemptspos)))
+    print("Binary Naive Bayes Classification Report:\n", classification_report(y_test, predictions, digits=4))
+    print()
 
 def perceptron_tri():
     # two class
@@ -212,8 +117,7 @@ def perceptron_tri():
     predicted_labels = model.predict(x_test)
 
     # Evaluating the model
-    print("Accuracy:", accuracy_score(y_test, predicted_labels))
-    print("Classification Report:", classification_report(y_test, predicted_labels, digits=4))
+    print("Triple Perceptron Classification Report:\n", classification_report(y_test, predicted_labels, digits=4))
 
 def naive_bayes_tri():
     # two class
@@ -229,8 +133,26 @@ def naive_bayes_tri():
     predicted_labels = model.predict(x_test)
 
     # Evaluating the model
-    print("Accuracy:", accuracy_score(y_test, predicted_labels))
-    print("Classification Report:", classification_report(y_test, predicted_labels, digits=4))
+    print("Triple Naive Bayes Classification Report:\n", classification_report(y_test, predicted_labels, digits=4))
+
+def bert_bi():
+    import torch
+    from model.bert import BertClassifier
+    model = BertClassifier(num_classes=2, transformer_name=args.transformer_name)
+    state_dict = torch.load(args.binary_save_checkpoint)
+    model.load_state_dict(state_dict)
+    model.to(model.device)
+    model.eval()
+
+    test_dataset = torch.load('data/test.pt')
+    preds, targets = [], []
+    for line in test_dataset:
+        texts = [b.replace(' ', '').replace('○', '') for b in [line[0]]]
+        pred = torch.argmax(model(texts), dim=-1).cpu().detach().tolist()[0]
+        preds.append(pred)
+        targets.append(line[1])
+    
+    print("Binary GUWEN-BERT Classification Report:\n", classification_report(targets, preds, digits=4))
 
 def bert_tri():
     import torch
@@ -249,7 +171,7 @@ def bert_tri():
         preds.append(pred)
         targets.append(line[1])
     
-    print("Classification Report:", classification_report(targets, preds, digits=4))
+    print("Triple GUWEN-BERT Classification Report:\n", classification_report(targets, preds, digits=4))
 
 
 

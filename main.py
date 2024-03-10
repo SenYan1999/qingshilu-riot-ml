@@ -31,6 +31,7 @@ parser.add_argument('--infer_three_classes', action='store_true')
 parser.add_argument('--plot_figures', action='store_true')
 parser.add_argument('--export_data_stata', action='store_true')
 parser.add_argument('--export_data_web_demo', action='store_true')
+parser.add_argument('--benchmark', action='store_true')
 
 parser.add_argument('--train_ratio', type=float, default=0.8)
 parser.add_argument('--train_dataset', type=str, default='data/train.pt')
@@ -240,6 +241,32 @@ def export_data_web_demo():
     with open("data/web/filter_binary_infer_entries.json", 'w') as f:
         json.dump(data, f)
 
+def benchmark():
+    from utils.base_ml_model import perceptron_bi, perceptron_tri, naive_bayes_tri, mnb_bi, bert_bi, bert_tri
+    print('*' * 100)
+    print('\nBinary Classification: Perceptron')
+    perceptron_bi()
+
+    print('*' * 100)
+    print('\nBinary Classification: Naive Bayes')
+    mnb_bi()
+
+    print('*' * 100)
+    print('\nBinary Classification: GUWEN-BERT')
+    bert_bi()
+
+    print('*' * 100)
+    print('\n Triple Classification: Perceptron')
+    perceptron_tri()
+
+    print('*' * 100)
+    print('\nTriple Classification: Naive Bayes')
+    naive_bayes_tri()
+
+    print('*' * 100)
+    print('\nTriple Classification: GUWEN-BERT')
+    bert_tri()
+
 if __name__ == '__main__':
     if args.process_raw_data:
         process_raw_data()
@@ -264,4 +291,7 @@ if __name__ == '__main__':
     
     if args.export_data_web_demo:
         export_data_web_demo()
+    
+    if args.benchmark:
+        benchmark()
 

@@ -92,20 +92,19 @@ python main.py --infer
 python main.py --infer_three_classes
 ```
 
-### Step 8: Plot Figures Shown in Paper
-
-```bash
-python main.py --plot_figures
-```
-
-### Step 9: Export the Results to Stata Data Format for Future Analysis
+### Step 8: Export the Results to Stata Data Format for Future Analysis
 
 **Input:** data/triple_infer_entries.json, data/stata/*
 
 **Output:** data/stata/export/*_stata_validation_weather_grain_year.dta
 
 ```bash
-python main.py --export_data_demo_stata
+python main.py --export_data_stata
+```
+
+### Option 1: Benchmarking GUWEN-Bert Classifier with Other ML Models
+```bash
+python main.py --benchmark
 ```
 
 ## Run Demo Website
