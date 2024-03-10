@@ -1,0 +1,101 @@
+﻿ID,ID2,year-month,page,province,prefecture(py),xian(py),lower units,content,form1,form2,form3,violence,leader,participants,issue,,state-engaging,state-resisting,violent,non-violent,riot-count
+1,1740,QL5-5,1775-117-26,Gansu,Liangzhou,,,demanding gov't action - troops,petition,,,,兵丁,兵丁,借糧,,1,2,2,1,3
+4,1741,QL6-4,2106-141-15,Jiangsu,Tong zhou,,,demanding gov't action - peasants,petition,market strike,,,鄉市愚民,鄉市愚民,求免開閘,,8,5,3,10,13
+17,1742,QL7-3,2384-162-12,Fujian,,,,demanding gov't action,petition,,,,百姓,百姓,求賑,,8,2,1,9,10
+27,1743,QL8-2,2732-184-3,Jiangsu,Xuzhou*,,custom point,resistance,protest,litigation,,,地棍,民衆,反對關員滋擾,,5,1,1,5,6
+33,1744,QL9-3,3100-212-4,Jiangsu,Suzhou,Wu,,demanding gov't action - demanding gov action,"petition, litigation",market strike,attack gov't office,yes,地棍，尼僧,民衆,求修寺,,4,1,2,3,5
+38,1745,QL10-4,3444-238-7,Anhui,Ningguo fu,Xuancheng,,N/A,protest,,,,鄉民,鄉民,N/A,,4,1,1,5,5
+44,1746,QL11-3,3789-261-33,Hunan,Yuezhou,Baling,,resistance,violence,,,yes,水手,水手,抗稅,,8,6,5,10,14
+59,1747,QL12-1,4098-282-11,Gansu,Liangzhou,Guyuan zhou,,resistance,violence,attack gov't office,,yes,營兵,兵民,反對糧餉遲發,,9,7,7,10,16
+76,1748,QL13-4,4570-313-24,Jiangsu,Xuzhou,Xiao,,demanding gov't action - food,petition,,,,婦女,婦女,求賑,,5,1,3,3,6
+82,1749,QL14-4,5120-338-27,Hunan,Changsha,Yiyang,,demanding gov't action,protest,,,,船戶街民,船戶街民,反對典吏換船太慢,,2,3,1,5,5
+88,1750,QL15-1,13-931,Fujian,Taiwan,Zhanghua,,resistance,,,,,教犯,犯人,越獄,,3,2,1,4,5
+93,1751,QL16-1,14-15,Fujian,Taiwan,,,resistance,attacking government agents,,,Yes,武生,流棍,爭閙毆差,,11,6,7,10,17
+110,1752,QL17-1,"14-358, 375, 386, 403, 410, 589",Fujian,Taiwan,Zhanghua,,resistance,killing,,,Yes,生番,生番,殺死兵民,,4,1,1,4,5
+115,1753,QL18-1,"14-622, 627, 640, 697",Shaanix,Yan'an,,,demanding government action,protest,blocking general office entrance,,,兵丁,兵丁,反對扣餉,,2,8,6,4,10
+125,1754,QL19-4,14-1002,Guizhou,Dading,Pingyuan,,resistance,protest,storming government office,,,戶書,子弟婦女,欺隱田糧、哄堂辱官,,0,1,0,1,1
+126,1755,QL20-4,15-106,N?A,,,,resistance,attacking government agents,,,Yes,積匪,積匪,拒捕傷差,,4,1,1,4,5
+131,1756,QL21-2,"15-388, 389",Hubei,Anlu,Jingshan,,resistance,attacking government agents,,,Yes,地棍,地棍,搶犯拒捕,,2,1,1,2,3
+134,1757,QL22-1,15-748,Hunan,Changde,Taoyuan,,demanding government action,petition,,,,縣民,縣民,求修閘,,2,0,0,2,2
+136,1758,QL23-2,"16-48, 47? 52, 53, 587, 588, 660",Beijing,,,,resistance,protest,exam strike,blocking government entrance,,滿蒙童生,滿蒙童生,反不能傳遞,,0,5,4,1,5
+141,1759,QL24-1,16-377,Guizhou,Pingyue,Meitan,,resistance,attacking government agents,,,Yes,縣民,縣民,聚衆奪犯,,1,2,3,3,3
+,1760,,,,,,,,,,,,,,,,0,0,0,0,0
+147,1761,QL26-5,17-118,Jiangsu,Xuzhou,Pei,,resistance,resist arrest,,,,監生,,抗糧拒差,,0,4,2,2,4
+151,1762,QL27-2,17- 321,Zhaoqing,Yangguang,,,??,exam strike,distributing pamphlet,,,童生,童生,貼揭罷考咆哮閑庭,,1,2,2,2,3
+155,1763,QL28-2,"17-598, 611",Guangxi,Liuzhou,Rong,,resistance,attacking government agents,,,Yes,流犯,流犯,聚衆毆并,,1,4,5,0,5
+160,1764,QL29-6,17-946,Hunan,??,,,resistance,resisting arrest,liberating arrested,,Yes,逸犯,逸犯,拒捕奪犯,,0,3,2,1,3
+163,1765,QL30-1,18-18,Henan,Zhangde,Tangyin,,resistance,petition,market strike,,,??,??,反對合并,,0,4,2,2,4
+167,1766,QL31-2,18-303,Gansu,Qingyang,Heshui,,demanding gov't action,market strike,protest,,,災民,災民,求賑,,1,0,0,2,1
+169,1767,QL32-3,18-609,Henan,Shenzhou,,,resistance,attacking government agents,,,Yes,回民,回民,拒捕毆差,,2,5,6,1,7
+176,1768,QL33-9,"18-1097, 1132",Gansu,Dihua,Changji,,resistance,killing government officials,,,Yes,屯田遣犯,屯田遣犯,伐官,,0,2,3,0,2
+179,1769,QL34-2,19-45,Henan,??,,,demanding gov't action,asking that central government's reimbursement be put in local government's public coffer,,,,紳士,民人,呈請將賞銀歸公,,4,3,3,4,7
+186,1770,QL35-2,"19-424, 425, 431, 438, 446, 462, 475, 479, 485, 502",Guizhou,Zhunyi,Tongzi,,resistance,attacking government offices,protest,,Yes,生員,刁民,反科派軍需,,0,2,2,0,2
+188,1771,QL36-10,19-1008,Shandong,Yanzhou,Yanggu,,resistance,petition,protest,,,革生,革生,求免地畝,,0,1,0,1,1
+189,1772,QL37-6,20-182,??,,,,resistance,attacking government agents,,,Yes,盜犯,盜犯,拒捕,,0,1,1,0,1
+190,1773,QL38-1,"20-548, 643",Sichuan,Zhongzhou,Fengdu,,resistance,protest,,,,縣民,縣民,阻撓撥夫,,0,1,0,1,1
+191,1774,QL39-3,20-933,??,,,,resistance,attacking government agents,,,Yes,匪犯,匪犯,拔刀拒捕,,0,4,4,0,4
+,1775,,,,,,,,,,,,,,,,0,0,0,0,0
+195,1776,QL41-7,21-584,Jiangxi?,Guangxin?,Xing'an,,resistance,attacking government agents,storming government office,,Yes,兵丁,兵丁,毆傷吏目,,0,3,3,0,3
+198,1777,QL42-10,"21-973, 975, 983, 990, 1001, 1016, 1020, 1028",Shandong,Yanzhou,Yi xian,,resistance,attacking government agents,,,Yes,鹽梟,鹽梟,拒捕傷差,,0,2,2,0,2
+200,1778,QL43-3,22-70,Zhili,Shuntian,Miyun,,resistance,attacking government agents,,,Yes,劫匪,劫匪,毆差奪犯,,0,4,4,0,4
+204,1779,QL44-2,"22-459, 483, 485, 486, 488, 491, 492, 493, 501",Zhili,Zhengding,Jingxing,,resistance,attacking government agents,litigation,,Yes,革生,村民,抗稅,,1,3,4,0,4
+208,1780,QL45-2,22-743,Gansu,Liangzhou,Zhenfan,,demanding government action,petition,,,,無業貧民,無業貧民,呈請願往新疆墾種,,4,1,1,4,5
+213,1781,QL46-7,"23-179, 180, 183, 184, 185, 194, 196, 203, 207, 208, 211, 221, 225, 226, 231, 233, 240, 245, 250, 252, 259, 262, 264, 276, 283, 289, 297, 299, 301, 317, 321, 337",Sichuan,Chongqing,He zhou,,resistance,attacking government agents,,,Yes,嘓嚕,嘓嚕,拒捕,,0,6,6,0,6
+219,1782,QL47-9,"23-594, 645",Fujian,Quanzhou,Nanan,,resistance,storming government office,attacking government agents,,Yes,童生,？？,反對卷單錢文,,0,4,4,0,4
+223,1783,QL48-1,"23-717 (repeating 133,134?), 719, 721, 722, 729, 753, 754, 25-528",Fujian,Taiwan,,,resistance,attacking government agents,,,Yes,刁民,刁民,殺害汛兵,,1,4,3,2,5
+228,1784,QL49-6,24-188,Sichuan,Chengdu,Peng,,resistance,attacking government agents,resist arrest,,Yes,鹽梟,鹽梟,拒捕傷人,,0,4,4,0,4
+232,1785,QL50-4,24-456,Henan,Shanzhou,,,resistance,attacking government agents,resista arrest,,Yes,村民,村民,拒捕傷差,,1,5,5,2,6
+239,1786,QL51-3,24-815,Hubei,Huangzhou,Huanggang,,resistance,attacking government agents,resist arrest,,Yes,賊犯,賊犯,行竊拒捕,,0,8,6,2,8
+247,1787,QL52-2,25-49,Shanxi,Xingan,Baihe,,resistance,attacking government agents,resist arrest,,Yes,??,,糾夥拒捕,,1,4,3,2,5
+252,1788,QL53-1,"25-436, 480",Fujian,Zhangzhou,Zhangpu,,demanding government action,looting government reserve,burning government office,,Yes,匪徒,匪徒,糾夥搶掠,,3,5,3,3,8
+260,1789,QL54-2,"25-904, 905, 906",Fujian,Fuzhou,Luoyuan,,resistance  ,attacking government agents,,,Yes,賊,賊,拒捕毆兵,,3,5,4,3,8
+268,1790,QL55-1,"26-38, 42, 46, 261, 284, 308",Shandong,Wuding,Bin zhou,,resistance,attacking government agents,release arrested,,Yes,舉人,衆人,拒捕毆差,,0,6,3,3,6
+274,1791,QL56-1,"26-395, 421",Fujian,Taiwan,,,resistance,attacking government agents,resist arrest,escaping from jails killing government agents in revenge,Yes,賊匪,賊匪,夥匪殺差,,1,5,4,2,6
+280,1792,QL57-1,26-730,Fujian,Taiwan,,,resistance,escaped from jails,,,Yes,監犯,監犯,閙監,,0,10,7,3,10
+290,1793,QL58-3,27-66,Zhejiang,Shaoxing,Xiaoshan,,demanding government action,petition,,,,紳士,紳士,呈請改築堤工,,1,2,2,1,3
+293,1794,QL59-3,"27-315, 325",Sichuan,Jiading,Emei,,demanding government action,attacking government agents,looting government envoys,,Yes,番民,番民,竊劫,,3,5,5,3,8
+301,1795,QL60-1,27-604,Hubei,Yunyang,Juxi,,resistance,attacking govenrment agents,,,Yes,教匪,教匪,奪犯,,1,7,6,2,8
+309,1796,JQ1-12,28-307,Fujian,Zhangzhou,,,resistance,attacking govenrment agents,resist arrest,,Yes,盜匪,盜匪,拒捕,,0,1,1,0,1
+,1797,,,,,,,,,,,,,,,,0,0,0,0,0
+,1798,,,,,,,,,,,,,,,,0,0,0,0,0
+310,1799,JQ4-4,28-519,Zhili,Shuntian,"Wanping, Ji Xian",,demanding government action,petition,,,,縣民,縣民,呈請開礦,,1,4,2,3,5
+316,1800,JQ5-4b,28-882,Guangdong,Huizhou,Boluo,,resistance,attacking government agents,,,Yes,百姓,百姓,反催糧,,1,3,3,1,4
+320,1801,JQ6-10,29-181,Zhili,Tianjin,,,demanding government action,petition,,,,老幼男婦,老幼男婦,求賑,,4,1,2,3,5
+325,1802,JQ7-1,29-260,Zhili,Shuntian,Beijing,,resistance,attacking government agents,resisted arrest,,Yes,賊犯,賊犯,拒捕傷兵,,1,1,1,1,2
+327,1803,JQ8-9,29-609,??,??,,,resistance,attacking government agents,resisted arrest,,Yes,不安分之徒,不安分之徒,拒捕傷兵,,0,3,2,1,3
+330,1804,JQ9-2,29-707,Hubei,Hanyang,Mianyang zhou,,resistance,attacking government agents,resisted arrest,,Yes,民人,民人,不服彈壓,,2,5,6,1,7
+337,1805,JQ10-5,29-973,Jiangsu,Suzhou,Wujiang,,demadning government actioin,protest,,,,刁生劣監,刁生劣監,閙曹規,,1,0,0,1,1
+338,1806,JQ11-7,30-132,Gansu,Ningxia,,,demanding government action,protest,looting,assasinating government officials,Yes,兵丁,兵丁,求停止折米,,1,0,1,0,1
+339,1807,JQ12-1,"30-265, 269, 295, 298, 353",Shaanxi,Ningshan ting,,,resistance,protest,mutiny,,,新兵,新兵,反遣散,,6,5,2,8,11
+350,1808,JQ13-8,30-660,Zhili,Shuntian,Beijing,,resistance,attacking govenrment office,,,Yes,官,家奴,搶牌文,,0,1,1,0,1
+351,1809,JQ14-5,30-850,Shaaxi,Xi'an,Ningxia,,resistance,looting government office,,,Yes,營兵,營兵,搶掠官府,,1,3,1,2,4
+355,1810,JQ15-4,31-62,Guangxi,Zhen'an,Tianbao,,resistance,attacking government offices,looting government office,release arrested,Yes,土人,土人,奪犯劫署,,2,2,2,2,4
+359,1811,JQ16-5,31-274,Zhili,Shuntian,Beijing,,resistance,attacking govenrment agents,resist arrest,,Yes,賊犯,賊犯,拒捕,,0,2,2,0,2
+361,1812,JQ17-3,31-446,Shanxi,Xi'an,Ningshan,,demanding governemnt action,petition,,,,士民,士民,請築城,,3,1,1,3,4
+365,1813,JQ18-8,31-693,Zhili,Chengde,,,resistance,attacking government agents,resisted arrest,,Yes,逃犯,逃犯,率眾拒捕,,0,2,2,0,2
+367,1814,JQ19-1,"31-851, 858, 865, 872, 878, 880, 895, 898, 904, 914, 32-22",Shaanxi,Fengxiang,Qishan,Sancai xia,resistance,attacking government agents,resisted arrest,,Yes,饑民傭工,饑民傭工,抗拒官兵,,0,4,4,0,4
+371,1815,JQ20-6,32-74,Guangdong,Zhaoqing,Yangjiang,,resistance,attacking government agents,revenge for laying off,,Yes,革兵,賊匪,搶奪師船,,1,3,4,0,4
+375,1816,JQ21-1,32-187,??,,,,resistance,storming government office,attacking government agents,,Yes,兵丁,革兵,復仇傷差,,1,1,1,1,2
+377,1817,JQ22-1,32-302,Shandong,Yanzhou,Yi xian,Yinping ji,demanding government action,petition,,,,無業貧民,無業貧民,攔輿求食,,5,3,3,5,8
+385,1818,JQ23-3,32-488,Shandong,Qingzhou,"Gaoyuan, Boxing, Le'an",,demanding government action,petition,,,,民人,民人,求減慢上游放水,,1,2,2,1,3
+388,1819,JQ24-4b,32-711,Zhili,Shuntian,Beijing,,??,petition,,,,民人,民人,叩閽,,0,3,2,2,3
+392,1820,JQ25-5,32-893,??,,,,resistance,attacking government agents,,,Yes,鹽販,鹽販,拒捕,,0,3,3,1,3
+396,1821,DG1-5,"33-336, 754",Jiangsu,Taicang,Jiading,,resistance,protest,,,,土豪,鄉民,閙漕,,0,4,3,1,4
+400,1822,DG2-1,33-510,Hunan,Changsha,Liling,,resistance,protest,disrupting tax collection,,,生監,縣民,挾制官長,,3,3,4,2,6
+405,1823,DG3-1,33-854,Zhejiang,Ningpo,Fenghua,,resistance,attacking government agents,,,Yes,私販,私販,拒捕傷差,,1,3,4,0,4
+408,1824,DG4-5,34-81,??,,,,resistance,attacking government agents,,,Yes,水手,水手,聚衆拒捕,,0,1,1,0,1
+409,1825,DG5-2,34-273,Zhejiang,Ningbo,Zhenhai,,resistance,feud,attacking government agents,,Yes,龜戶,龜戶,鬥毆毆官,,0,5,2,3,5
+414,1826,DG6-2,34-549,Guandong,Jiaying,,,resistance,attacking governemnt agents,litigation,,Yes,州民,州民,持械拒捕,,1,3,3,1,4
+418,1827,DG7-3,34-928,Zhili,Shuntian,Beijing,,demanding government action,looting government property,,,Yes,棍徒,棍徒,搶劫官物,,1,1,1,1,2
+420,1828,DG8-6,"35-109, 133, 155, 214, 279, 280, 420",Zhili,Daming,Kai zhou,,resistance,attacking government agents,,,Yes,逸盜,逸盜,糾眾奪犯,,1,5,3,3,6
+426,1829,DG9-1,"35-300, 302",Shaaxi Gansu,,,,resistance,protest,,,,新兵,新兵,反口糧不足,,1,2,1,2,3
+428,1830,DG10-3,35.569.166.5-6,Gansu,Liangzhou,,,demanding gov't action,violence,,,yes,流民、新兵,流民、新兵,搶糧,,4,4,4,4,8
+435,1831,DG11-6b,35.1023.191.27-29,Jiangsu,Yangzhou,Gaoyou zhou,,resistance,protest,,,,農民,農民,反對放水,,6,3,3,6,9
+443,1832,DG12-2a,36.27.205.22,Jiangsu,Changzhou,Wujin,,resistance,violence,,,yes,革生,民衆,糾眾拒捕,,3,15,14,4,18
+456,1833,DG13.7b,36.612.241.21-3,Guangxi,Sicheng,Xilong,,resistance,protest,,,,兵丁,兵丁,反對禁屠,,4,1,2,3,5
+461,1834,DG14.5,36.815.252.8-9,Jiangxi (Hubei?),Jiujiang,,Jiujiang guan,resistance,protest,,,,漕船,漕船,抗稅,,1,5,4,2,6
+466,1835,DG15.5,37.87.266.16-7,Zhili,Yongping,,,demanding gov't action,petition,,,yes,農民,農民,求賑,,1,2,3,0,3
+468,1836,DG16.1,37.271.277.16-8,Gansu,Qin zhou,,,resistance,market strike,,,,民人,民人,反對衙役招搖,,2,13,9,7,15
+482,1837,DG17.7,37.647.299.26-7,Hunan,Changsha,Xiangxiang,,resistance,violence,,,yes,匪徒,匪徒,抗糧,,0,5,5,0,5
+485,1838,DG18.3,37.781.307.4,Hubei,Huangzhou,Qi zhou,,resistance,violence,,,yes,州試文童,州試文童,反對書役鎮壓口角,,0,10,8,2,10
+491,1839,DG19.3,37.1004.320.6-7,Zhejiang,Taizhou,,,resistance,protest,litigation  ,,,文生,文生,反對恊副砍樹,,0,3,3,1,3

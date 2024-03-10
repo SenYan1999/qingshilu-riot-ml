@@ -1,0 +1,7 @@
+geopandas
+palettable
+matplotlib
+pypinyin
+pycnnum
+transformers
+pandas
