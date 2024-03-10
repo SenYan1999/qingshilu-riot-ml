@@ -6,7 +6,7 @@ Feel free to contact <a href="https://senyan1999.github.io/" target="_blank">Sen
 
 ## :computer: Demo Website
 
-Please visit our [demo website](https://qingshilu-riot-ml-efpftbunv2eumqbikxssat.streamlit.app/){:target="_blank"}.
+Please visit our [demo website](https://qingshilu-riot-ml-efpftbunv2eumqbikxssat.streamlit.app/).
 
 ![Screenshot of Demo Website](data/web/web_screenshot.png)
 
