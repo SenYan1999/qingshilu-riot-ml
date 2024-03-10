@@ -12,6 +12,8 @@ Please visit our [demo website](https://qingshilu-riot-ml-efpftbunv2eumqbikxssat
 
 ## :boom: Re-Implementation
 
+Recommend to run the following program in a machine with NVIDIA-GPU Cards and install [pytorch supporting GPU](https://pytorch.org/get-started/locally/). Otherwise it takes a long time for training and inference GUWEN-BERT.  
+
 ### Step 1: Install Python and Related Python Libraries
 
 1. Install Python 
