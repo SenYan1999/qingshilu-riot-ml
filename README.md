@@ -1,10 +1,10 @@
 # Machine Learning Methods to Identify Riot Entries from 清实录 (Qing Shi Lu)
 
 ## :hugs: Brief Introduction
-Feel free to contact [Me](https://senyan1999.github.io/) via my email sen.yan@colorado.edu if you have any questions. 
+Feel free to contact [Me](https://senyan1999.github.io/){:target="_blank"} via my email sen.yan@colorado.edu if you have any questions. 
 
 ## :computer: Demo Website
-Please visit our [demo website](https://qingshilu-riot-ml-efpftbunv2eumqbikxssat.streamlit.app/).
+Please visit our [demo website](https://qingshilu-riot-ml-efpftbunv2eumqbikxssat.streamlit.app/){:target="_blank"}.
 
 ![Screenshot of Demo Website](data/web/web_screenshot.png)
 
