@@ -14,103 +14,103 @@ Please visit our [demo website](https://qingshilu-riot-ml-efpftbunv2eumqbikxssat
 
 ### Step 1: Install Python and Related Python Libraries
 
-1. Install Python 
-2. Instal Related Python Libraries
+    1. Install Python 
+    2. Instal Related Python Libraries
 
-    ```bash
-    pip install requirements.txt
-    ```
+        ```bash
+        pip install requirements.txt
+        ```
 
 ### Step 2: Extract Time (Year and Month), Prefecture, and Label (Riot vs Non-Riot) From Each Entry
 
-**Input:**  data/entries, data/annotation_chen, data/sixclasses, data/location/1820/\*, data/location/1911/\*
+    **Input:**  data/entries, data/annotation_chen, data/sixclasses, data/location/1820/\*, data/location/1911/\*
 
-**Output:** data/data.pkl
+    **Output:** data/data.pkl
 
-**Command:**
+    **Command:**
 
-```bash
-python main.py --process_raw_data
-```
+        ```bash
+        python main.py --process_raw_data
+        ```
 
 ### Step 3: Prepare the Data for Training Process
-**Input:** data/data.pkl
+    **Input:** data/data.pkl
 
-**Output:** data/train.pt, data/test.pt, data/three_classes_train.pt, data/three_classes_test.pt
+    **Output:** data/train.pt, data/test.pt, data/three_classes_train.pt, data/three_classes_test.pt
 
-**Command:**
+    **Command:**
 
-```bash
-python main.py --prepare_data
-```
+        ```bash
+        python main.py --prepare_data
+        ```
 
 ### Step 4: Train GUWEN-BERT (Binary Classifier)
 
-**Input:** data/train.pt, data/test.pt
+    **Input:** data/train.pt, data/test.pt
 
-**Output:** logs/guwen-bert.pt
+    **Output:** logs/guwen-bert.pt
 
-**Command:**
+    **Command:**
 
-```bash
-python main.py --train
-```
+        ```bash
+        python main.py --train
+        ```
 
 ### Step 5: Train GUWEN-BERT (Triple Classifier)
 
-**Input:** data/three_classes_train.pt, data/three_classes_test.pt
+    **Input:** data/three_classes_train.pt, data/three_classes_test.pt
 
-**Output:** logs/triple-guwen-bert.pt
+    **Output:** logs/triple-guwen-bert.pt
 
-**Command:**
+    **Command:**
 
-```bash
-python main.py --train_three_classes
-```
+        ```bash
+        python main.py --train_three_classes
+        ```
 
 ### Step 6: Apply GUWEN-BERT (Binary Classifier) to All Entries in Qing Shi Lu to Identify Riot-Entries
 
-**Input:** logs/guwen-bert.pt, data/data.pkl
+    **Input:** logs/guwen-bert.pt, data/data.pkl
 
-**Output:** data/binary_infer_entries.json
+    **Output:** data/binary_infer_entries.json
 
-**Command:**
+    **Command:**
 
-```bash
-python main.py --infer
-```
+        ```bash
+        python main.py --infer
+        ```
 
 ### Step 7: Apply GUWEN-BERT (Triple Classifier) to Riot-Entries from Step 6 to Identify Triple Classes
 
-**Input:** logs/triple-guwen-bert.pt, data/binary_infer_entries.json
+    **Input:** logs/triple-guwen-bert.pt, data/binary_infer_entries.json
 
-**Output:** data/triple_infer_entries.json
+    **Output:** data/triple_infer_entries.json
 
-**Command:**
+    **Command:**
 
-```bash
-python main.py --infer_three_classes
-```
+        ```bash
+        python main.py --infer_three_classes
+        ```
 
 ### Step 8: Plot Figures Shown in Paper
 
-```bash
-python main.py --plot_figures
-```
+    ```bash
+    python main.py --plot_figures
+    ```
 
 ### Step 9: Export the Results to Stata Data Format for Future Analysis
 
-**Input:** data/triple_infer_entries.json, data/stata/*
+    **Input:** data/triple_infer_entries.json, data/stata/*
 
-**Output:** data/stata/export/*_stata_validation_weather_grain_year.dta
+    **Output:** data/stata/export/*_stata_validation_weather_grain_year.dta
 
-```bash
-python main.py --export_data_demo_stata
-```
+        ```bash
+        python main.py --export_data_demo_stata
+        ```
 
 ## Run Demo Website
 
-```bash
-python main.py --export_data_demo_website
-streamlit run streamlit_app.py
-```
+    ```bash
+    python main.py --export_data_demo_website
+    streamlit run streamlit_app.py
+    ```
