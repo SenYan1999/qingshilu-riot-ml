@@ -12,7 +12,6 @@ Please visit our [demo website](https://qingshilu-riot-ml-efpftbunv2eumqbikxssat
 
 ## :boom: Re-Implementation
 
-Recommend to run the following program in a machine with NVIDIA-GPU Cards and install [pytorch with GPU support](https://pytorch.org/get-started/locally/). Otherwise it takes a long time for training and inference GUWEN-BERT.  
 
 ### Step 1: Install Python and Related Python Libraries
 
@@ -20,8 +19,9 @@ Recommend to run the following program in a machine with NVIDIA-GPU Cards and in
 2. Instal Related Python Libraries
 
     ```bash
-    pip install requirements.txt
+    pip install -r requirements.txt
     ```
+**Note:** Recommend to run the following program in a machine with NVIDIA-GPU Cards and install [pytorch with GPU support](https://pytorch.org/get-started/locally/). Otherwise it takes a long time for training and inference GUWEN-BERT.  
 
 ### Step 2: Extract Time (Year and Month), Prefecture, and Label (Riot vs Non-Riot) From Each Entry
 

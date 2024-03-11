@@ -5,3 +5,9 @@ pypinyin
 pycnnum
 transformers
 pandas
+scikit-learn
+streamlit
+jieba
+xgboost
+numpy
+torch

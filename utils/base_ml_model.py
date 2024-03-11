@@ -1,6 +1,5 @@
 import torch
 import jieba
-import pickle
 import xgboost as xgb
 from main import args
 from sklearn.linear_model import Perceptron
