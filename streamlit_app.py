@@ -11,8 +11,6 @@ from utils.location import Pref_Pinyin_dict
 st.set_page_config(layout="centered")
 
 
-mpl.rcParams['font.family'] = ['serif']
-mpl.rcParams['font.serif'] = ['Times New Roman']
 plt.rcParams['axes.unicode_minus'] = False
 mpl.rcParams['pdf.fonttype'] = 42
 mpl.rcParams['ps.fonttype'] = 42
