@@ -51,7 +51,7 @@ class Processor:
         month_pattern = r"(正月|腊月|[一二三四五六七八九十]{1,2}月)"
         entries = []
         for emperor in self.emperor_list:
-            with open(os.path.join(entry_dir, emperor+'.txt')) as f:
+            with open(os.path.join(entry_dir, emperor+'.txt'), encoding='utf-8') as f:
                 meta_info = f.read().strip().split('○')[0]
                 for line in meta_info.split('\n'):
                     year_match = re.search(year_pattern, line[:20])
@@ -68,7 +68,7 @@ class Processor:
                 else:
                     raise Exception('Incorrect Meta Information in {}'.format(os.path.join(entry_dir, emperor+'.txt')))
 
-            with open(os.path.join(entry_dir, emperor+'.txt')) as f:
+            with open(os.path.join(entry_dir, emperor+'.txt'), encoding='utf-8') as f:
                 lines = f.read().strip()
 
             assert meta_info in lines
@@ -102,7 +102,7 @@ class Processor:
     def extract_training_dataset(self, annotation_dir, sixclasses_dir):
         data = []
         fail, count = 0, 0
-        with open(os.path.join(annotation_dir, 'Train_riots.txt'), 'r') as f:
+        with open(os.path.join(annotation_dir, 'Train_riots.txt'), 'r', encoding='utf-8') as f:
             for line in tqdm(f.readlines(), 'Extracting Riots'):
                 line = line.strip().replace('○', '')
                 entries = list(filter(lambda x: x['entry'][:100] == line[:100], self.entries))
@@ -117,7 +117,7 @@ class Processor:
             print('Fail Rate (Process Annotation Chen): %2d / %2d = %.2f' % (fail, count, fail / count))
 
         fail, count = 0, 0
-        with open(os.path.join(annotation_dir, 'Train_nonriots.txt'), 'r') as f:
+        with open(os.path.join(annotation_dir, 'Train_nonriots.txt'), 'r', encoding='utf-8') as f:
             for line in tqdm(f.readlines(), desc='Extracting Non-Riots'):
                 line = line.strip().replace('○', '')
                 entries = list(filter(lambda x: x['entry'][:100] == line[:100], self.entries))
@@ -134,7 +134,7 @@ class Processor:
         for file in glob.glob(os.path.join(sixclasses_dir, '*.txt')):
             riot_type = file.split('/')[-1].replace('.txt', '').lower()
             fail, count = 0, 0
-            with open(file, 'r') as f:
+            with open(file, 'r', encoding='utf-8') as f:
                 for line in f.readlines():
                     line = line.strip().replace('○', '')
                     line = re.sub(r'\d+', '', line).strip()
