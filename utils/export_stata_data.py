@@ -224,7 +224,7 @@ def export_stata(create_weather_grain=False, grain_idx=0):
     df['year'].fillna(-1).astype('int64')
     df['prefecture'].fillna(-1).astype('int64')
     df.replace(-1, np.nan, inplace=True)
-    df.to_stata(f'data/stata/{suffix}_stata_validation_weather_grain_month.dta', write_index=False)
+    df.to_stata(f'data/stata/export/{suffix}_stata_validation_weather_grain_month.dta', write_index=False)
 
     year_df = df.groupby(['year', 'prefecture']).agg({'riot_count':'sum', 'jieshe_count': 'sum',
                                                 'peasants_count': 'sum',

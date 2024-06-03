@@ -11,3 +11,4 @@ jieba
 xgboost
 numpy
 torch
+openpyxl

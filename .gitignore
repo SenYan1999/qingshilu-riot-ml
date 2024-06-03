@@ -1,5 +1,5 @@
 data/stata/China_pre_post.dta
-data/stata/Rice_2nd_mid_stata_validation_weather_grain_month.dta
+data/stata/export/Rice_2nd_mid_stata_validation_weather_grain_month.dta
 data/triple_infer_entries.json
 data/triple_infer_entries.json.bak
 data/binary_infer_entries.json
@@ -8,3 +8,17 @@ data/validation/month_3topics_10_18.dta
 data/validation/guwen_bert_month_3topics.dta
 logs/guwen-bert.pt
 logs/triple-guwen-bert.pt
+.git/objects/da/tmp_obj_XvOZg5
+.git/objects/da/tmp_obj_4SrW4d
+.git/objects/96/a6adb4188dde6b39855e5553c393c5a57f54ae
+logs/guwen-bert.pt
+logs/triple-guwen-bert.pt
+data/stata/China_pre_post.dta
+data/stata/export/Rice_2nd_mid_stata_validation_weather_grain_month.dta
+data/binary_infer_entries_bak.json
+data/binary_infer_provinces.json
+data/binary_infer_entries.json
+data/data.pkl
+data/validation/month_3topics_10_18.dta
+data/validation/guwen_bert_month_3topics.dta
+data/mongo_db_data.json
