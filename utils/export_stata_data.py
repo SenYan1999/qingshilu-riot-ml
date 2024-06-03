@@ -75,7 +75,7 @@ def export_stata(create_weather_grain=False, grain_idx=0):
             continue
         elif int(entry['year']) not in qing_range:
             continue
-        for prefecture in entry['Prefecture']:
+        for prefecture in entry['prefectures']:
             years.append(entry['year'])
             months.append(entry['month'])
             riot_types.append(entry['RiotType'])

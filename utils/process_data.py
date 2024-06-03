@@ -1,9 +1,19 @@
 import os
 import re
 import glob
+import sxtwl
 from tqdm import tqdm
 from pycnnum import cn2num
 from .location import LocationIdentify
+
+def to_solar(year, month):
+    try:
+        _, _ = int(year), int(month)
+    except:
+        print('Error when converting year %s and month %s' % (str(year), str(month)))
+        return year, month
+    lunar = sxtwl.fromLunar(int(year), int(month), 28)
+    return lunar.getSolarYear(), lunar.getSolarMonth()
 
 class Processor:
     def __init__(self, entry_dir, annotation_dir, sixclasses_dir):
