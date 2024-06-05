@@ -124,9 +124,9 @@ def plot_year_dist_binary(low=1840, high=1911):
 
     # Creating the plot
     ax.plot(years, points, marker='None', color='b', linestyle='-')
-    ax.set_title("Riots Over Years (%d - %d)" % (low, high), fontsize=14)
+    ax.set_title("Unrest Entries Over Years (%d - %d)" % (low, high), fontsize=14)
     ax.set_xlabel("Years", fontsize=12)
-    ax.set_ylabel("Number of Riots", fontsize=12)
+    ax.set_ylabel("Number of Unrest Entries", fontsize=12)
     ax.xaxis.set_ticks(np.arange(low, high, 5))
     ax.xaxis.set_tick_params(rotation=90)
     plt.grid(True)
@@ -168,8 +168,8 @@ def plot_year_dist_three_classes(low=1840, high=1911):
     ax.bar(r3, dp[:, 2], width=bar_width, label=subclasses[2])
 
     # Adding labels
-    ax.set_ylabel('Share of All Riots in Emperors\' Reign', fontsize=12)
-    ax.set_title('Riot Breakdown by Emperor Reign', fontsize=14)
+    ax.set_ylabel('Share of All Unrest Entries in Emperors\' Reign', fontsize=12)
+    ax.set_title('Unrest Entries Breakdown by Emperor Reign', fontsize=14)
     ax.set_xticks([r + bar_width for r in range(len(classes))])
     ax.set_xticklabels(classes)
     ax.legend(loc='upper center', bbox_to_anchor=(0.5, -0.05),
@@ -187,19 +187,19 @@ def main():
         st.write("Menu")
         if st.button('Display the diagrams'):
             st.session_state.selected_option = 'A'
-        if st.button('Explore the riots entries'):
+        if st.button('Explore the unrest entries'):
             st.session_state.selected_option = 'B'
     
     if st.session_state.selected_option == 'A':
 
         # display maps
-        map_table, count_table, three_class_table = st.tabs(['Heat Map', 'Riots Year Dist', 'Riots Three Classes Dist'])
+        map_table, count_table, three_class_table = st.tabs(['Heat Map', 'Unrest Year Dist', 'Unrest Three Classes Dist'])
         with map_table:
             low_year = st.number_input("Low Year", value=1636, min_value=1636, max_value=1912, step=1, format="%i", key='low_map')
             high_year = st.number_input("High Year", value=1911, min_value=1636, max_value=1912, step=1, format="%i", key='high_map')
             fig, topk = plot_map(low=low_year, high=high_year)
             st.pyplot(fig)
-            st.markdown('**Top 10 Prefectures with Most Riots**')
+            st.markdown('**Top 10 Prefectures with Most Unrest**')
             for line in topk:
                 if line[0] and line[1]:
                     st.markdown('**%s**: %4d' % (line[0], line[1]))
@@ -217,7 +217,7 @@ def main():
         data = load_binary()
         low_year = st.number_input("Low Year", value=1636, min_value=1636, max_value=1912, step=1, format="%i", key='low_text')
         high_year = st.number_input("High Year", value=1911, min_value=1636, max_value=1912, step=1, format="%i", key='high_text')
-        str_search = st.text_input('Query the riot entries based on the keyword', value='')
+        str_search = st.text_input('Query the unrest entries based on the keyword', value='')
         prefecture_names = load_prefecture_names()
         prefecture = st.selectbox('Please select the prefecture', prefecture_names)
         data = list(filter(lambda x: x['Riot'], data))
@@ -231,8 +231,8 @@ def main():
         page = st.selectbox('Please select the page', [i + 1 for i in range(pages)])
         page_data = prefecture_data[(page-1) * num_row: page * num_row]
 
-        st.markdown('**Number of riot entries in %s (%d - %d):** %7d' % (prefecture, low_year, high_year, len(prefecture_data)))
-        st.markdown('**Number of riot entries in total (%d - %d):** %7d' % (low_year, high_year, len(data)))
+        st.markdown('**Number of unrest entries in %s (%d - %d):** %7d' % (prefecture, low_year, high_year, len(prefecture_data)))
+        st.markdown('**Number of unrest entries in total (%d - %d):** %7d' % (low_year, high_year, len(data)))
 
         for line in page_data:
             entry, emperor, year, chinese_year, prefecture_list = st.columns([4, 1, 1, 1, 1])
