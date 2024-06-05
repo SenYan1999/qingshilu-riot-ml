@@ -1,6 +1,5 @@
 data/stata/China_pre_post.dta
 data/stata/export/Rice_2nd_mid_stata_validation_weather_grain_month.dta
-data/triple_infer_entries.json
 data/triple_infer_entries.json.bak
 data/binary_infer_entries.json
 data/data.pkl
