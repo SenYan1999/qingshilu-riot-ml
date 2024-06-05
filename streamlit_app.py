@@ -103,7 +103,7 @@ def plot_map(low=1840, high=1911):
     topk_lines = china_map.sort_values('Count')
     fig, ax = plt.subplots(figsize=(10, 8))
     china_map.plot(column='Count', ax=ax, legend=True, cmap='YlGnBu')  # 'OrRd' is a colormap, you can choose any
-    ax.set_title('Riots in China, %d to %d' % (low, high))
+    ax.set_title('Unrest in China, %d to %d' % (low, high))
     topk = [[topk_lines.iloc[-i-1]['NAME_CH'], topk_lines.iloc[-i-1]['Count']] for i in range(10)]
     return fig, topk
 
