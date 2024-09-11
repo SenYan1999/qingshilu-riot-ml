@@ -112,6 +112,6 @@ python main.py --benchmark
 ## :earth\_americas: Run Demo Website
 
 ```bash
-python main.py --export_data_demo_website
+python main.py --export_data_web_demo
 streamlit run streamlit_app.py
 ```

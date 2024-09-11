@@ -40,6 +40,8 @@ def filter_year(year, low=1000, high=2000):
         return False
     if low <= year and year <= high:
         return True
+    else:
+        return False
 
 @st.cache_data
 def load_binary():
@@ -53,10 +55,11 @@ def load_prefecture_names():
     data = load_binary()
     prefecture_names = []
     for line in data:
-        prefecture_names += line['Prefecture']
+        prefecture_names += line['prefectures']
     prefecture_names = list(set(prefecture_names))
     sorted_prefecture_names = sorted(prefecture_names, key=lambda char: ''.join(lazy_pinyin(char)))
-    return sorted_prefecture_names
+    sorted_prefecture_names_with_pinyin = [name + '(%s)' % ''.join(lazy_pinyin(name)) for name in sorted_prefecture_names]
+    return sorted_prefecture_names_with_pinyin
 
 
 @st.cache_data
@@ -70,10 +73,10 @@ def load_trible():
 def load_data(low=1840, high=1900):
     # Replace this with the path to your geospatial dataset
     data = load_binary()
-    filtered_data = list(filter(lambda p: filter_year(p['year'], low, high) and p['Riot'], data))
+    filtered_data = list(filter(lambda p: filter_year(p['year'], low, high) == True and p['Riot'], data))
     filtered_dp = []
     for line in filtered_data:
-        for pref in line['Prefecture']:
+        for pref in line['prefectures']:
             filtered_dp.append([pref_dict.get(pref, pref), line['year']])
 
     data = dict(Counter([line[0] for line in filtered_dp]))
@@ -82,6 +85,7 @@ def load_data(low=1840, high=1900):
     # Load the map of China at the province level
     # This requires a shapefile (or similar file) that defines the boundaries of each province
     china_map = gpd.read_file('data/geography/v6_1820_pref_pgn_gbk.shx', encoding='gb18030')
+    # china_map = china_map[china_map['NAME_CH'] != '万里长沙']
 
     Pref_Pinyin_dict['抚州府'] = 'Fuzhou-1 Fu'
     Pref_Pinyin_dict['叙州府'] = 'Xuzhou-1 Fu'
@@ -104,6 +108,9 @@ def plot_map(low=1840, high=1911):
     fig, ax = plt.subplots(figsize=(10, 8))
     china_map.plot(column='Count', ax=ax, legend=True, cmap='YlGnBu')  # 'OrRd' is a colormap, you can choose any
     ax.set_title('Unrest in China, %d to %d' % (low, high))
+    ax.set_xticks([])
+    ax.set_yticks([])
+    fig.tight_layout()
     topk = [[topk_lines.iloc[-i-1]['NAME_CH'], topk_lines.iloc[-i-1]['Count']] for i in range(10)]
     return fig, topk
 
@@ -112,13 +119,13 @@ def plot_year_dist_binary(low=1840, high=1911):
     # Load data
     fig, ax = plt.subplots(figsize=(12, 6), dpi=150)
     data = load_binary()
-    data = list(filter(lambda dp: filter_year(dp['year'], low, high), data))
+    data = list(filter(lambda dp: filter_year(dp['year'], low, high) == True, data))
     years = np.arange(low, high+1, 1)  # Years from 2000 to 2020
     points = np.zeros_like(years)
     for entry in data:
         if bool(entry['Riot']) and entry['year'] is not None:
             try:
-                points[int(entry['year']) - low] += 1
+                points[int(entry['year']) - low] += max(len(entry['prefectures']), 1)
             except:
                 print(entry['entry'])
 
@@ -219,12 +226,14 @@ def main():
         high_year = st.number_input("High Year", value=1911, min_value=1636, max_value=1912, step=1, format="%i", key='high_text')
         str_search = st.text_input('Query the unrest entries based on the keyword', value='')
         prefecture_names = load_prefecture_names()
-        prefecture = st.selectbox('Please select the prefecture', prefecture_names)
-        data = list(filter(lambda x: x['Riot'], data))
-        data = list(filter(lambda x: filter_year(x['year']), data))
-        prefecture_data = list(filter(lambda x: prefecture in x['Prefecture'], data))
-        prefecture_data = list(filter(lambda x: str_search in x['entry'], prefecture_data))
-
+        prefecture = st.selectbox('Please select the prefecture', ["All Prefecture"] + prefecture_names)
+        data = list(filter(lambda x: x['Riot'] == True, data))
+        data = list(filter(lambda x: filter_year(x['year'], low_year, high_year) == True, data))
+        if prefecture != 'All Prefecture':
+            prefecture_data = list(filter(lambda x: prefecture.split('(')[0] in x['prefectures'], data))
+            prefecture_data = list(filter(lambda x: str_search in x['entry'], prefecture_data))
+        else:
+            prefecture_data = data
         
         num_row = 10
         pages = len(prefecture_data) // num_row + 1
@@ -245,9 +254,7 @@ def main():
             with chinese_year:
                 st.write(line['chinese_year'])
             with prefecture_list:
-                st.write('  \n  '.join(line['Prefecture']))
-
-
+                st.write('  \n  '.join(line['prefectures']))
 
 if __name__ == "__main__":
     main()

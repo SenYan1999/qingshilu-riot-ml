@@ -172,6 +172,57 @@ def bert_tri():
     
     print("Triple GUWEN-BERT Classification Report:\n", classification_report(targets, preds, digits=4))
 
+def perceptron_four():
+    # two class
+    import numpy as np
+    train_dataset, test_dataset = torch.load(args.train_four_dataset), torch.load(args.test_four_dataset)
+    x_train, y_train = [d[0] for d in train_dataset], [d[1] for d in train_dataset]
+    x_test, y_test = [d[0] for d in test_dataset], [d[1] for d in test_dataset]
+    model = make_pipeline(TfidfVectorizer(tokenizer=jieba.lcut), Perceptron())
+
+    # Training the model
+    model.fit(x_train, y_train)
+
+    # Predicting the labels for the test set
+    predicted_labels = model.predict(x_test)
+
+    # Evaluating the model
+    print("Four Perceptron Classification Report:\n", classification_report(y_test, predicted_labels, digits=4))
+
+def naive_bayes_four():
+    # two class
+    train_dataset, test_dataset = torch.load(args.train_four_dataset), torch.load(args.test_four_dataset)
+    x_train, y_train = [d[0] for d in train_dataset], [d[1] for d in train_dataset]
+    x_test, y_test = [d[0] for d in test_dataset], [d[1] for d in test_dataset]
+    model = make_pipeline(TfidfVectorizer(tokenizer=jieba.lcut), MultinomialNB())
+
+    # Training the model
+    model.fit(x_train, y_train)
+
+    # Predicting the labels for the test set
+    predicted_labels = model.predict(x_test)
+
+    # Evaluating the model
+    print("Four Naive Bayes Classification Report:\n", classification_report(y_test, predicted_labels, digits=4))
+
+def bert_four():
+    import torch
+    from model.bert import BertClassifier
+    model = BertClassifier(num_classes=4, transformer_name=args.transformer_name)
+    state_dict = torch.load(args.four_save_checkpoint)
+    model.load_state_dict(state_dict)
+    model.to(model.device)
+    model.eval()
+
+    test_dataset = torch.load(args.test_four_dataset)
+    preds, targets = [], []
+    for line in test_dataset:
+        texts = [b.replace(' ', '').replace('○', '') for b in [line[0]]]
+        pred = torch.argmax(model(texts), dim=-1).cpu().detach().tolist()[0]
+        preds.append(pred)
+        targets.append(line[1])
+    
+    print("Four GUWEN-BERT Classification Report:\n", classification_report(targets, preds, digits=4))
 
 
 if __name__ == '__main__':
