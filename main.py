@@ -44,7 +44,7 @@ parser.add_argument('--train_four_dataset', type=str, default='data/four_classes
 parser.add_argument('--test_four_dataset', type=str, default='data/four_classes_test.pt')
 parser.add_argument('--epochs', type=int, default=10)
 parser.add_argument('--lr', type=float, default=2e-5)
-parser.add_argument('--transformer_name', type=str, default='hfl/chinese-roberta-wwm-ext')
+parser.add_argument('--transformer_name', type=str, default='ethanyt/guwenbert-base')
 parser.add_argument('--batch_size', type=int, default=16)
 parser.add_argument('--num_classes', type=int, default=2)
 parser.add_argument('--binary_save_checkpoint', type=str, default='logs/guwen-bert.pt')
