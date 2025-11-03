@@ -2,6 +2,7 @@ import os
 import re
 import glob
 import sxtwl
+import pickle
 from tqdm import tqdm
 from pycnnum import cn2num
 from .location import LocationIdentify
@@ -59,6 +60,11 @@ class Processor:
 
         year_pattern = rf'{ems}.?{cn_num}年'
         month_pattern = r"(正月|腊月|[一二三四五六七八九十]{1,2}月)"
+        pre_saved_entry = 'temp/entries.pickle'
+        if os.path.exists(pre_saved_entry): 
+            with open(pre_saved_entry, 'rb') as f:
+                entries = pickle.load(f)
+            return entries
         entries = []
         for emperor in self.emperor_list:
             with open(os.path.join(entry_dir, emperor+'.txt'), encoding='utf-8') as f:
@@ -107,6 +113,8 @@ class Processor:
                     # may be some error, see the comment code in the above line
                     prefectures = LocationIdentify(line[1:])
                     entries.append({'entry': line[1:], 'emperor': emperor, 'year': year_num, 'month': month_num, 'chinese_year': year, 'prefectures': prefectures})
+        with open(pre_saved_entry, 'wb') as f:
+            pickle.dump(entries, f)
         return entries
 
     def extract_training_dataset(self, annotation_dir, sixclasses_dir):
@@ -146,11 +154,11 @@ class Processor:
             fail, count = 0, 0
             with open(file, 'r', encoding='utf-8') as f:
                 for line in f.readlines():
-                    line = line.strip().replace('○', '')
+                    line = line.strip().split('○')[-1]
                     line = re.sub(r'\d+', '', line).strip()
-                    if len(line) == 0:
+                    if len(line) < 10:
                         continue
-                    entries = [i for i, x in enumerate(data) if x['entry'][:100] == line[:100]]
+                    entries = [i for i, x in enumerate(data) if x['entry'][-100:] == line[-100:]]
                     if len(entries) == 0:
                         fail += 1
                     else:
@@ -158,4 +166,5 @@ class Processor:
                     count += 1
             print('Fail Rate in %10s %2d / %2d = %.2f' % (riot_type + ':', fail, count, fail / count))
 
+        data = [line for line in data if line['RiotType'] != 'Unknown']
         return data

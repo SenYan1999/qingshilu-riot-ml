@@ -1,0 +1,15 @@
+python main.py --train --train_three_classes --train_five_classes --train_four_classes --train_second_four_classes --transformer_name hfl/chinese-roberta-wwm-ext --log_dir chinese-roberta-wwm-ext &&
+python main.py --train --train_three_classes --train_five_classes --train_four_classes --train_second_four_classes --log_dir guwenbert-base &&
+python main.py --train --train_three_classes --train_five_classes --train_four_classes --train_second_four_classes --transformer_name google-bert/bert-base-chinese --log_dir bert-base-chinese &&
+python main.py --train --train_three_classes --train_five_classes --train_four_classes --train_second_four_classes --transformer_name Jihuai/bert-ancient-chinese --log_dir bert-ancient-chinese
+
+
+python main.py --train_five_classes --transformer_name hfl/chinese-roberta-wwm-ext --log_dir chinese-roberta-wwm-ext &&
+python main.py --train_five_classes --log_dir guwenbert-base &&
+python main.py --train_five_classes --transformer_name google-bert/bert-base-chinese --log_dir bert-base-chinese &&
+python main.py --train_five_classes --transformer_name Jihuai/bert-ancient-chinese --log_dir bert-ancient-chinese
+
+python main.py --train_three_classes --transformer_name google-bert/bert-base-chinese --log_dir bert-base-chinese &&
+python main.py --train_three_classes --transformer_name hfl/chinese-roberta-wwm-ext --log_dir chinese-roberta-wwm-ext &&
+python main.py --train_three_classes --log_dir guwenbert-base &&
+python main.py --train_three_classes --transformer_name Jihuai/bert-ancient-chinese --log_dir bert-ancient-chinese

@@ -35,7 +35,20 @@ class ThreeClassesDataset(BaseDataset):
         self.class2label = {'disaster': 0, 'others_peasant': 0, 'rent': 0, 'tax': 0, 'jieshe': 1, 'wuzhuang': 2}
         with open(file, 'rb') as f:
             raw_data = pickle.load(f)
+        data = [(entry['entry'], self.class2label[entry['RiotType']]) for entry in raw_data.annotated_entries if entry['RiotType'] not in ['Non-Riot', 'others']]
+        return data
+
+class SecondStepFourClassesDataset(BaseDataset):
+    def __init__(self, file):
+        super(SecondStepFourClassesDataset, self).__init__(file)
+
+    def _load_data(self, file):
+        self.class2label = {'disaster': 0, 'others_peasant': 0, 'rent': 0, 'tax': 0, 'jieshe': 1, 'wuzhuang': 2, 'others': 3}
+        with open(file, 'rb') as f:
+            raw_data = pickle.load(f)
         data = [(entry['entry'], self.class2label[entry['RiotType']]) for entry in raw_data.annotated_entries if entry['RiotType'] not in ['Non-Riot']]
+        from collections import Counter
+        print(Counter([entry['RiotType'] for entry in raw_data.annotated_entries]))
         return data
 
 class FourClassesDataset(BaseDataset):
@@ -46,7 +59,21 @@ class FourClassesDataset(BaseDataset):
         self.class2label = {'Non-Riot': 0, 'disaster': 3, 'others_peasant': 3, 'rent': 3, 'tax': 3, 'jieshe': 1, 'wuzhuang': 2}
         with open(file, 'rb') as f:
             raw_data = pickle.load(f)
+        data = [(entry['entry'], self.class2label[entry['RiotType']]) for entry in raw_data.annotated_entries if entry['RiotType'] != 'others']
+        return data
+
+class FiveClassesDataset(BaseDataset):
+    def __init__(self, file):
+        super(FiveClassesDataset, self).__init__(file)
+
+    def _load_data(self, file):
+        from collections import Counter
+        self.class2label = {'Non-Riot': 0, 'disaster': 3, 'others_peasant': 3, 'rent': 3, 'tax': 3, 'jieshe': 1, 'wuzhuang': 2, 'others': 4}
+        with open(file, 'rb') as f:
+            raw_data = pickle.load(f)
+        print(Counter([entry['RiotType'] for entry in raw_data.annotated_entries]))
         data = [(entry['entry'], self.class2label[entry['RiotType']]) for entry in raw_data.annotated_entries]
+        print(Counter([line[1] for line in data]))
         return data
 
 if __name__ == '__main__':

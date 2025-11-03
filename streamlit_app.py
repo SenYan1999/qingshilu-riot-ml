@@ -146,7 +146,7 @@ def plot_year_dist_three_classes(low=1840, high=1911):
     # Sample data for a bar plot with subclasses
     data = load_trible()
 
-    classes = ['Shunzhi', 'Kangxi', 'Yongzheng', 'Qianlong', 'Daoguang', 'Jiaqing', 'Tongzhi', 'Xianfeng', 'Guangxu', 'Xuantong']
+    classes = ['Shunzhi', 'Kangxi', 'Yongzheng', 'Qianlong', 'Jiaqing', 'Daoguang', 'Xianfeng', 'Tongzhi', 'Guangxu', 'Xuantong']
     subclasses = ['Peasant', 'Secret Party', 'Militia']
 
     # Generating random data for each subclass in each class
@@ -171,12 +171,12 @@ def plot_year_dist_three_classes(low=1840, high=1911):
 
     # Making the plot
     ax.bar(r1, dp[:, 0], width=bar_width, label=subclasses[0])
-    ax.bar(r2, dp[:, 1], width=bar_width, label=subclasses[1])
+    ax.bar(r2, dp[:, 1], width=bar_width, label=subclasses[1].replace('Party', 'Society'))
     ax.bar(r3, dp[:, 2], width=bar_width, label=subclasses[2])
 
     # Adding labels
-    ax.set_ylabel('Share of All Unrest Entries in Emperors\' Reign', fontsize=12)
-    ax.set_title('Unrest Entries Breakdown by Emperor Reign', fontsize=14)
+    ax.set_ylabel('Share of All Social Unrest Entries in Emperors\' Reign', fontsize=12)
+    ax.set_title('Social Unrest Breakdown by Emperor Reign', fontsize=14)
     ax.set_xticks([r + bar_width for r in range(len(classes))])
     ax.set_xticklabels(classes)
     ax.legend(loc='upper center', bbox_to_anchor=(0.5, -0.05),
