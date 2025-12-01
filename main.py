@@ -65,6 +65,9 @@ parser.add_argument('--triple_infer_file', type=str, default='data/triple_infer_
 parser.add_argument('--four_infer_file', type=str, default='data/four_infer_entries.json')
 args = parser.parse_args()
 
+if not os.path.exists(os.path.join('logs')):
+    os.mkdir(os.path.join('logs'))
+
 if not os.path.exists(os.path.join('logs', args.log_dir)):
     os.mkdir(os.path.join('logs', args.log_dir))
 args.binary_save_checkpoint = os.path.join('logs', args.log_dir, 'guwen-bert.pt')
