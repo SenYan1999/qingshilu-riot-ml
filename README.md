@@ -96,6 +96,9 @@ python main.py --infer_three_classes
 
 ### Step 8: Export the Results to Stata Data Format for Future Analysis
 
+**Download the file [`China_pre_post.dta`](https://www.dropbox.com/scl/fi/s62e44kja8zhks67a6p3d/China_pre_post.dta?rlkey=uxv0oj8tq1d7nlsnsoehwfx1f&st=c0wsy3rf&dl=0) and place it in `data/stata/China_pre_post.dta`.**
+
+
 **Input:** data/triple_infer_entries.json, data/stata/*
 
 **Output:** data/stata/export/*_stata_validation_weather_grain_year.dta
