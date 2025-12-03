@@ -10,6 +10,12 @@ Please visit our [demo website](https://qingshilu-riot-ml-efpftbunv2eumqbikxssat
 
 ![Screenshot of Demo Website](data/web/web_screenshot.png)
 
+## :open_file_folder: Data Download
+
+1. Download [four_infer_entries.json](https://www.dropbox.com/scl/fi/u2cci8sa6b4qsqhzaw8pl/four_infer_entries.json?rlkey=ihemylru7wbqgbjynadrudwrc&st=kgrubpq8&dl=0) and place it in `data/four_infer_entries.json`
+2. Download the file [`China_pre_post.dta`](https://www.dropbox.com/scl/fi/s62e44kja8zhks67a6p3d/China_pre_post.dta?rlkey=uxv0oj8tq1d7nlsnsoehwfx1f&st=c0wsy3rf&dl=0) and place it in `data/stata/China_pre_post.dta`.
+3. Download the [pre-trained model](https://www.dropbox.com/scl/fi/yawkhja7suxlnh1nen8ry/guwenbert-base.zip?rlkey=kgoh57oy04te9ttvnwsq3ae0x&st=chsf4ve3&dl=0), compress it, and place all the files inside the `logs/guwenbert-base`.
+
 ## :boom: Re-Implementation
 
 
@@ -67,7 +73,7 @@ python main.py --train
 **Command:**
 
 ```bash
-python main.py --train_three_classes
+python main.py --train_three_classes --log_dir guwenbert-base
 ```
 
 ### Step 6: Apply GUWEN-BERT (Binary Classifier) to All Entries in Qing Shi Lu to Identify Riot-Entries
@@ -79,7 +85,7 @@ python main.py --train_three_classes
 **Command:**
 
 ```bash
-python main.py --infer
+python main.py --infer --log_dir guwenbert-base
 ```
 
 ### Step 7: Apply GUWEN-BERT (Triple Classifier) to Riot-Entries from Step 6 to Identify Triple Classes
@@ -91,12 +97,11 @@ python main.py --infer
 **Command:**
 
 ```bash
-python main.py --infer_three_classes
+python main.py --infer_three_classes --log_dir guwenbert-base
 ```
 
 ### Step 8: Export the Results to Stata Data Format for Future Analysis
 
-**Download the file [`China_pre_post.dta`](https://www.dropbox.com/scl/fi/s62e44kja8zhks67a6p3d/China_pre_post.dta?rlkey=uxv0oj8tq1d7nlsnsoehwfx1f&st=c0wsy3rf&dl=0) and place it in `data/stata/China_pre_post.dta`.**
 
 
 **Input:** data/triple_infer_entries.json, data/stata/*
@@ -104,17 +109,17 @@ python main.py --infer_three_classes
 **Output:** data/stata/export/*_stata_validation_weather_grain_year.dta
 
 ```bash
-python main.py --export_data_stata
+python main.py --export_data_stata --log_dir guwenbert-base
 ```
 
 ### Option 1: Benchmarking GUWEN-Bert Classifier with Other ML Models
 ```bash
-python main.py --benchmark
+python main.py --benchmark --log_dir guwenbert-base
 ```
 
 ## :earth\_americas: Run Demo Website
 
 ```bash
-python main.py --export_data_web_demo
+python main.py --export_data_web_demo --log_dir guwenbert-base
 streamlit run streamlit_app.py
 ```
