@@ -127,11 +127,11 @@ streamlit run streamlit_app.py
 ```
 
 ## 📝 How to Cite
-**Chicago Style Citation**
+### Chicago Style Citation
 
-*Keller, Wolfgang, Carol Shiue, and Sen Yan. "Mining Chinese Historical Sources At Scale: A Machine Learning-Approach to Qing State Capacity." Historical Methods: A Journal of Quantitative and Interdisciplinary History, forthcoming.*
+**Keller, Wolfgang, Carol Shiue, and Sen Yan.** "Mining Chinese Historical Sources At Scale: A Machine Learning-Approach to Qing State Capacity." ***Historical Methods: A Journal of Quantitative and Interdisciplinary History, forthcoming.***
 
-**Bibtex Citation**
+### Bibtex Citation
 ```bibtex
 @article{KellerShiueYan2025,
   author  = {Keller, Wolfgang and Shiue, Carol and Yan, Sen},
