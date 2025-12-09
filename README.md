@@ -2,6 +2,8 @@
 
 ## :hugs: Brief Introduction
 
+This repository contains the reproduction materials for the paper [*Mining Chinese Historical Sources At Scale: A Machine-Learning Approach to Qing State Capacity*](https://www-nber-org.colorado.idm.oclc.org/papers/w32982).  
+
 Feel free to contact <a href="https://senyan1999.github.io/" target="_blank">Sen Yan</a> via his email sen.yan@colorado.edu if you have any questions. 
 
 ## :computer: Demo Website
@@ -122,4 +124,19 @@ python main.py --benchmark --log_dir guwenbert-base
 ```bash
 python main.py --export_data_web_demo --log_dir guwenbert-base
 streamlit run streamlit_app.py
+```
+
+## 📝 How to Cite
+**Chicago Style Citation**
+```
+Keller, Wolfgang, Carol Shiue, and Sen Yan. "Mining Chinese Historical Sources At Scale: A Machine Learning-Approach to Qing State Capacity." Historical Methods: A Journal of Quantitative and Interdisciplinary History, forthcoming.
+```
+**Bibtex Citation**
+```bibtex
+@article{KellerShiueYan2025,
+  author  = {Keller, Wolfgang and Shiue, Carol and Yan, Sen},
+  title   = {Mining Chinese Historical Sources At Scale: A Machine-Learning Approach to Qing State Capacity},
+  journal = {Historical Methods},
+  year    = {forthcoming}
+}
 ```
